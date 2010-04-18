@@ -14,9 +14,9 @@ class InfiniteGadgetHandler(webapp.RequestHandler):
     wave_id = encoded_wave_id.replace('%21', '!').replace('%2B', '+')
     wave_server = 'http://wave.google.com/'
     if wave_id.find('wavesandbox') < 0:
-      wave_server = wave_server + 'a/wavesandbox.com/'
-    else:
       wave_server = wave_server + 'wave/'
+    else:
+      wave_server = wave_server + 'a/wavesandbox.com/'
     path = os.path.join(os.path.dirname(__file__), 'infinite_gadget.xml')
     self.response.out.write(template.render(path, {
       'wave_id': wave_id,
