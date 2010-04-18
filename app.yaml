@@ -6,3 +6,5 @@ api_version: 1
 handlers:
 - url: /_wave/.*
   script: infinty-robot.py
+- url: .*
+  script: main.py
